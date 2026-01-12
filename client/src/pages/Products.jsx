@@ -107,7 +107,7 @@ export default function Products() {
 
   return (
     <div className="w-full h-full">
-      {/* Edit Product Modal */}
+      {}
       <EditProductModal
         isOpen={showEditModal}
         onClose={() => setShowEditModal(false)}
@@ -116,7 +116,7 @@ export default function Products() {
         showToast={showToastMessage}
       />
 
-      {/* Delete Confirmation Modal */}
+      {}
       <DeleteConfirmationModal
         isOpen={showDeleteModal}
         onClose={() => setShowDeleteModal(false)}
@@ -125,7 +125,7 @@ export default function Products() {
         showToast={showToastMessage}
       />
 
-      {/* Breadcrumb with Search and Add Button */}
+      {}
       <div className="bg-gradient-to-r from-red-50 via-white to-blue-50 px-4 md:px-6 lg:px-8 py-3 border-b border-gray-200 flex items-center justify-between gap-2 md:gap-4 flex-wrap">
         <div className="flex items-center gap-2 flex-shrink-0">
           <svg className="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
@@ -134,7 +134,7 @@ export default function Products() {
           <span className="text-gray-700 font-medium text-sm md:text-base hidden sm:inline">Products</span>
         </div>
 
-        {/* Search Bar - Flexible width, responsive */}
+        {}
         <div className="relative w-full sm:flex-grow sm:max-w-xs">
           <svg className="absolute right-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -148,7 +148,7 @@ export default function Products() {
           />
         </div>
 
-        {/* User Profile */}
+        {}
         <div className="relative flex-shrink-0">
           <button
             onClick={() => setShowMenu(!showMenu)}
@@ -162,7 +162,7 @@ export default function Products() {
             </svg>
           </button>
 
-          {/* Dropdown Menu */}
+          {}
           {showMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-40">
               <div className="px-4 py-3 border-b border-gray-200">
@@ -183,9 +183,9 @@ export default function Products() {
         </div>
       </div>
 
-      {/* Main Content */}
+      {}
       <div className="p-4 md:p-6 lg:p-8">
-        {/* Header with Title and Add Button */}
+        {}
         <div className="flex items-center justify-between mb-6 md:mb-8 gap-3 flex-wrap">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Products</h1>
           <button
@@ -200,21 +200,21 @@ export default function Products() {
           </button>
         </div>
 
-        {/* Error State */}
+        {}
         {error && (
           <div className="p-4 bg-red-50 border border-red-200 rounded-lg mb-6 md:mb-8">
             <p className="text-red-600 text-sm">{error}</p>
           </div>
         )}
 
-        {/* Loading State */}
+        {}
         {loading && (
           <div className="flex items-center justify-center py-12 md:py-20">
             <p className="text-gray-600 text-sm md:text-base">Loading products...</p>
           </div>
         )}
 
-        {/* Modal */}
+        {}
         <AddProductModal
           isOpen={showModal}
           onClose={() => setShowModal(false)}
@@ -222,7 +222,7 @@ export default function Products() {
           showToast={showToastMessage}
         />
 
-        {/* Empty State or Products Grid */}
+        {}
         {!loading && filteredProducts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 md:py-20">
             <div className="text-5xl md:text-6xl font-bold text-blue-600 mb-4">⊞⊞</div>
@@ -258,7 +258,7 @@ export default function Products() {
           </div>
         )}
 
-      {/* Toast Notification */}
+      {}
       <Toast
         message={toastMessage}
         type={toastType}

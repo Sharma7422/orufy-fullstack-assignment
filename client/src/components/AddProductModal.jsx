@@ -29,7 +29,7 @@ export default function AddProductModal({ isOpen, onClose, onProductAdded, showT
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Clear error for this field when user starts typing
+    
     if (fieldErrors[name]) {
       setFieldErrors({ ...fieldErrors, [name]: "" });
     }
@@ -78,7 +78,7 @@ export default function AddProductModal({ isOpen, onClose, onProductAdded, showT
       newErrors.images = "Please upload at least one product image";
     }
 
-    // If there are errors, set them and return
+    
     if (Object.keys(newErrors).length > 0) {
       setFieldErrors(newErrors);
       return;

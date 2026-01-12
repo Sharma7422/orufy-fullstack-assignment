@@ -32,7 +32,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex h-screen bg-gray-50">
-      {/* Backdrop for mobile */}
+      {}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
@@ -40,15 +40,15 @@ export default function Dashboard() {
         />
       )}
 
-      {/* Sidebar */}
+      {}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      {/* Main Content */}
+      {}
       <div className="w-full lg:ml-64 flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
+        {}
         <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
-        {/* Page Content */}
+        {}
         <div className="flex-1 overflow-y-auto">
           {currentPage === "products" ? <Products /> : <Home />}
         </div>

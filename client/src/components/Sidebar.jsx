@@ -22,12 +22,12 @@ export default function Sidebar({ isOpen, onClose }) {
 
   return (
     <div className={`fixed left-0 top-0 h-screen bg-[#1F2937] w-64 transition-transform duration-300 z-40 ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
-      {/* Header with Logo and Close Button */}
+      {}
       <div className="p-6 border-b border-gray-700 flex items-center justify-between">
         <div onClick={() => handleNavigation("/dashboard")} className="cursor-pointer">
           <Logo size="md" />
         </div>
-        {/* Close Button - Mobile Only */}
+        {}
         <button
           onClick={onClose}
           className="lg:hidden p-1 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors"
@@ -39,7 +39,7 @@ export default function Sidebar({ isOpen, onClose }) {
         </button>
       </div>
 
-      {/* Search Bar - Hidden on small screens */}
+      {}
       <div className="hidden md:block p-4 border-b border-gray-700">
         <input
           type="text"
@@ -48,7 +48,7 @@ export default function Sidebar({ isOpen, onClose }) {
         />
       </div>
 
-      {/* Navigation */}
+      {}
       <nav className="mt-8 space-y-2 px-4">
         <button
           onClick={() => handleNavigation("/dashboard")}

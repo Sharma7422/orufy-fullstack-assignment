@@ -32,7 +32,7 @@ export default function DeleteConfirmationModal({
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 p-3 md:p-4">
       <div className="bg-white rounded-lg shadow-xl max-w-sm w-full">
-        {/* Header */}
+        {}
         <div className="px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 flex items-center justify-between">
           <h2 className="text-lg md:text-xl font-bold text-gray-900">Delete Product</h2>
           <button
@@ -43,7 +43,7 @@ export default function DeleteConfirmationModal({
           </button>
         </div>
 
-        {/* Content */}
+        {}
         <div className="p-4 md:p-6">
           <p className="text-gray-700 mb-2 text-sm md:text-base">
             Are you sure you really want to delete this Product
@@ -52,7 +52,7 @@ export default function DeleteConfirmationModal({
             "{product.productName}" ?
           </p>
 
-          {/* Action Buttons */}
+          {}
           <div className="flex gap-2 md:gap-4 justify-end">
             <button
               onClick={onClose}

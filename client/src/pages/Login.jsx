@@ -90,12 +90,12 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex bg-gray-50">
-      {/* LEFT SECTION - Decorative with Frame */}
+      {}
       <div className="hidden lg:flex lg:w-1/2 relative p-8">
-        {/* Blue Border Frame */}
+        {}
         <div className="absolute inset-8  rounded-3xl pointer-events-none z-10"></div>
 
-        {/* Background Pattern Container */}
+        {}
         <div
           className="flex-1 rounded-3xl overflow-hidden relative"
           style={{
@@ -104,17 +104,17 @@ export default function Login() {
             backgroundPosition: "center",
           }}
         >
-          {/* Logo - Top Left */}
+          {}
           <div className="absolute top-8 left-8 z-20">
             <Logo size="md" showText={true} textColor="text-[071074]-600" />
           </div>
 
-          {/* Center Card with Runner Image */}
+          {}
           <div className="relative h-full flex items-center justify-center p-8">
             <div className="relative w-full max-w-xs">
-              {/* Card with gradient background and runner image */}
+              {}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
-                {/* Runner Image */}
+                {}
                 <div className="relative">
                   <img
                     src={runner || "/placeholder.svg"}
@@ -122,10 +122,10 @@ export default function Login() {
                     className="w-full h-[380px] object-cover"
                   />
 
-                  {/* Dark gradient overlay on image */}
+                  {}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-                  {/* Text Overlay */}
+                  {}
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
                     <p className="text-white text-xl font-semibold leading-snug">
                       Uplist your
@@ -140,10 +140,10 @@ export default function Login() {
         </div>
       </div>
 
-      {/* RIGHT SECTION - Login/Signup Form */}
+      {}
       <div className="w-full lg:w-1/2 flex items-center justify-center px-4 py-12 bg-gray-50">
         <div className="w-full max-w-sm">
-          {/* Mobile Logo */}
+          {}
           <div className="flex lg:hidden mb-8">
             <Logo size="md" showText={true} textColor="text-[071074]-900" />
           </div>
@@ -165,14 +165,14 @@ export default function Login() {
                   />
                 </div>
 
-                {/* Error Message */}
+                {}
                 {error && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                     <p className="text-red-600 text-sm">{error}</p>
                   </div>
                 )}
 
-                {/* Demo OTP Message */}
+                {}
                 {demoOtp && (
                   <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
                     <p className="text-blue-600 text-sm font-medium mb-1">📧 Demo OTP (for testing):</p>
@@ -190,7 +190,7 @@ export default function Login() {
                 </button>
               </form>
 
-              {/* Signup Section */}
+              {}
               <div className="mt-12 border border-gray-200 rounded-xl py-6 px-6 text-center bg-white shadow-sm">
                 <p className="text-gray-600 text-sm mb-2">Don't have a Productr Account</p>
                 <button
@@ -230,14 +230,14 @@ export default function Login() {
                   />
                 </div>
 
-                {/* Error Message */}
+                {}
                 {error && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                     <p className="text-red-600 text-sm">{error}</p>
                   </div>
                 )}
 
-                {/* Demo OTP Message */}
+                {}
                 {demoOtp && (
                   <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
                     <p className="text-blue-600 text-sm font-medium mb-1">📧 Demo OTP (for testing):</p>
@@ -255,7 +255,7 @@ export default function Login() {
                 </button>
               </form>
 
-              {/* Login Section */}
+              {}
               <div className="mt-12 border border-gray-200 rounded-xl py-6 px-6 text-center bg-white shadow-sm">
                 <p className="text-gray-600 text-sm mb-2">Already have a Productr Account?</p>
                 <button

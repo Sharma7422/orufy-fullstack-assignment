@@ -93,7 +93,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-full">
-      {/* Edit Product Modal */}
+      {}
       <EditProductModal
         isOpen={showEditModal}
         onClose={() => setShowEditModal(false)}
@@ -102,7 +102,7 @@ export default function Home() {
         showToast={showToastMessage}
       />
 
-      {/* Delete Confirmation Modal */}
+      {}
       <DeleteConfirmationModal
         isOpen={showDeleteModal}
         onClose={() => setShowDeleteModal(false)}
@@ -111,7 +111,7 @@ export default function Home() {
         showToast={showToastMessage}
       />
 
-      {/* Breadcrumb */}
+      {}
       <div className="bg-gradient-to-r from-red-50 via-white to-blue-50 px-4 md:px-6 lg:px-8 py-3 border-b border-gray-200 flex items-center justify-between text-sm">
         <div className="flex items-center gap-2">
           <svg className="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
@@ -120,7 +120,7 @@ export default function Home() {
           <span className="text-gray-700 font-medium hidden sm:inline">Home</span>
         </div>
 
-        {/* User Profile on Right */}
+        {}
         <div className="relative">
           <button
             onClick={() => setShowMenu(!showMenu)}
@@ -146,7 +146,7 @@ export default function Home() {
             </svg>
           </button>
 
-          {/* Dropdown Menu */}
+          {}
           {showMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-40">
               <div className="px-4 py-3 border-b border-gray-200">
@@ -167,12 +167,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Main Content */}
+      {}
       <div className="p-4 md:p-6 lg:p-8">
-        {/* Header */}
-        
+        {}
 
-        {/* Tabs - Responsive */}
+        {}
         <div className="flex gap-4 md:gap-8 border-b border-gray-200 mb-6 md:mb-8 overflow-x-auto">
           <button
             onClick={() => setActiveTab("published")}
@@ -196,21 +195,21 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Loading State */}
+        {}
         {loading && (
           <div className="flex items-center justify-center py-12 md:py-20">
             <p className="text-gray-600 text-sm md:text-base">Loading products...</p>
           </div>
         )}
 
-        {/* Error State */}
+        {}
         {error && (
           <div className="p-4 bg-red-50 border border-red-200 rounded-lg mb-6 md:mb-8">
             <p className="text-red-600 text-sm">{error}</p>
           </div>
         )}
 
-        {/* Products Grid or Empty State */}
+        {}
         {!loading && products.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 md:py-20">
             <div className="text-5xl md:text-6xl font-bold text-blue-600 mb-4">⊞⊞</div>
@@ -239,7 +238,7 @@ export default function Home() {
           </div>
         )}
 
-      {/* Toast Notification */}
+      {}
       <Toast
         message={toastMessage}
         type={toastType}

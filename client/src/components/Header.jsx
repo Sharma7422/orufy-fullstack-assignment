@@ -17,7 +17,7 @@ export default function Header({ onToggleSidebar }) {
 
   return (
     <header className="bg-white border-b border-gray-200  flex items-center justify-between px-3 md:px-6 lg:px-8 z-30 sticky top-0">
-      {/* Left Section - Hamburger Menu for Mobile/Tablet */}
+      {}
       <div className="flex lg:hidden flex-shrink-0">
         <button
           onClick={onToggleSidebar}

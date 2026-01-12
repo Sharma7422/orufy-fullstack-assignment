@@ -24,16 +24,16 @@ export default function ProductCard({
 
   return (
     <div className={`rounded-lg shadow-md hover:shadow-lg transition-shadow bg-white p-4 md:p-6 ${bgColorClass || "bg-white"}`}>
-      {/* Product Image with Carousel */}
+      {}
       {images.length > 0 ? (
         <div className="relative bg-gray-50 rounded-lg border border-gray-200 overflow-hidden group mb-4 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" style={{ height: "215px", width: "215px", minHeight: "215px", margin: "0 auto" }}>
           <img
-            src={`http://localhost:3456/uploads/${currentImage}`}
+            src={`https://orufy-fullstack-assignment.onrender.com/uploads/${currentImage}`}
             alt={product.productName}
             className="w-full h-full object-contain"
           />
 
-          {/* Image Navigation */}
+          {}
           {images.length > 1 && (
             <>
               <button
@@ -55,7 +55,7 @@ export default function ProductCard({
             </>
           )}
 
-          {/* Image Indicator Dots */}
+          {}
           {images.length > 1 && (
             <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
               {images.map((_, idx) => (
@@ -76,7 +76,7 @@ export default function ProductCard({
         </div>
       )}
 
-      {/* Product Details */}
+      {}
       <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
         {product.productName}
       </h3>
@@ -112,7 +112,7 @@ export default function ProductCard({
         </p>
       </div>
 
-      {/* Action Buttons */}
+      {}
       <div className="flex gap-1.5 md:gap-2 pt-4 border-t border-gray-200">
         <button
           onClick={() => onPublishToggle(product._id)}

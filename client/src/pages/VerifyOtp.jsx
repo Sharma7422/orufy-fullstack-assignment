@@ -145,12 +145,12 @@ export default function VerifyOtp() {
 
   return (
     <div className="min-h-screen flex bg-gray-50">
-      {/* LEFT SECTION - Decorative with Frame */}
+      {}
       <div className="hidden lg:flex lg:w-1/2 relative p-8">
-        {/* Blue Border Frame */}
+        {}
         <div className="absolute inset-8  rounded-3xl pointer-events-none z-10"></div>
 
-        {/* Background Pattern Container */}
+        {}
         <div
           className="flex-1 rounded-3xl overflow-hidden relative"
           style={{
@@ -159,17 +159,17 @@ export default function VerifyOtp() {
             backgroundPosition: "center",
           }}
         >
-          {/* Logo - Top Left */}
+          {}
           <div className="absolute top-8 left-8 z-20">
             <Logo size="md" showText={true} textColor="text-[071074]-600" />
           </div>
 
-          {/* Center Card with Runner Image */}
+          {}
           <div className="relative h-full flex items-center justify-center p-8">
             <div className="relative w-full max-w-xs">
-              {/* Card with gradient background and runner image */}
+              {}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
-                {/* Runner Image */}
+                {}
                 <div className="relative">
                   <img
                     src={runner || "/placeholder.svg"}
@@ -177,10 +177,10 @@ export default function VerifyOtp() {
                     className="w-full h-[380px] object-cover"
                   />
 
-                  {/* Dark gradient overlay on image */}
+                  {}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-                  {/* Text Overlay */}
+                  {}
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
                     <p className="text-white text-xl font-semibold leading-snug">
                       Uplist your
@@ -195,10 +195,10 @@ export default function VerifyOtp() {
         </div>
       </div>
 
-      {/* RIGHT SECTION - OTP Form */}
+      {}
       <div className="w-full lg:w-1/2 flex items-center justify-center px-4 py-12 bg-gray-50">
         <div className="w-full max-w-sm">
-          {/* Mobile Logo */}
+          {}
           <div className="flex lg:hidden mb-8">
             <Logo size="md" showText={true} textColor="text-[071074]-900" />
           </div>
@@ -207,10 +207,8 @@ export default function VerifyOtp() {
           <p className="text-gray-600 text-sm mb-8">Enter the 6-digit code sent to {authValue || "your email/phone"}</p>
           {!authValue && <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg mb-4"><p className="text-yellow-600 text-sm">⚠️ Session expired. Please login again.</p></div>}
 
-         
-
           <form onSubmit={handleVerifyOtp} className="space-y-8">
-            {/* OTP Input Boxes */}
+            {}
             <div className="space-y-4">
               <label className="block text-sm font-medium text-gray-900">Enter OTP</label>
               <div className="flex gap-3 justify-between">
@@ -234,7 +232,7 @@ export default function VerifyOtp() {
               </div>
             </div>
 
-            {/* Error Message */}
+            {}
             {error && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-red-600 text-sm">{error}</p>
@@ -250,7 +248,7 @@ export default function VerifyOtp() {
             </button>
           </form>
 
-          {/* Resend OTP Section */}
+          {}
           <div className="mt-8 text-center">
             <p className="text-gray-600 text-sm mb-2">Didn't receive OTP?</p>
             {resendTimer > 0 ? (

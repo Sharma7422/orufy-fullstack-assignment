@@ -7,7 +7,6 @@ const API = axios.create({
 
 console.log("API Base URL:", API.defaults.baseURL)
 
-
 // Attach token if stored
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
@@ -32,42 +31,34 @@ API.interceptors.response.use(
   }
 );
 
-
 export const sendOtp = (payload) => {
   return API.post("/auth/send-otp", payload);
 };
-
 
 export const verifyOtp = (payload) => {
   return API.post("/auth/verify-otp", payload);
 };
 
-
 export const resendOtp = (payload) => {
   return API.post("/auth/resend-otp", payload);
 };
-
 
 export const getUserDetails = () => {
   return API.get("/auth/user-details");
 };
 
-
 export const updateProductStatus = (productId) => {
   return API.put(`/products/status/${productId}`);
 };
-
 
 export const getProducts = (status = "") => {
   const query = status ? `?status=${status}` : "";
   return API.get(`/products/list${query}`);
 };
 
-
 export const getProductById = (productId) => {
   return API.get(`/products/view/${productId}`);
 };
-
 
 export const updateProduct = (productId, formData) => {
   return API.put(`/products/edit/${productId}`, formData, {
@@ -76,7 +67,6 @@ export const updateProduct = (productId, formData) => {
     },
   });
 };
-
 
 export const deleteProduct = (productId) => {
   return API.delete(`/products/delete/${productId}`);
