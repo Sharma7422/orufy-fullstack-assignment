@@ -39,19 +39,19 @@ exports.sendOtp = async (req, res) => {
     }
 
     const otp = generateOTP();
-    const otpExpiry = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes
+    const otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
 
     user.otp = otp;
     user.otpExpiry = otpExpiry;
     await user.save();
 
-    // 🔴 Assignment note: OTP logged in console
+ 
     console.log(`OTP for ${email || phone}:`, otp);
 
     return res.status(200).json({
       success: true,
       message: "OTP sent successfully",
-      otp: process.env.NODE_ENV !== "production" ? otp : undefined,
+      otp: otp, 
     });
   } catch (error) {
     console.error(error);
@@ -162,7 +162,7 @@ exports.resendOtp = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "OTP resent successfully",
-      otp: process.env.NODE_ENV !== "production" ? otp : undefined,
+      otp: otp, // Always send OTP for development/testing
     });
   } catch (error) {
     console.error(error);

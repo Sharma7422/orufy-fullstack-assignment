@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL + "/api",
+  // Remove withCredentials since we use Bearer tokens, not cookies
 });
 
 console.log("API Base URL:", API.defaults.baseURL)
@@ -15,6 +16,21 @@ API.interceptors.request.use((config) => {
   }
   return config;
 });
+
+// Error interceptor for debugging
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error("API Error Details:", {
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      message: error.response?.data?.message,
+      url: error.config?.url,
+      method: error.config?.method,
+    });
+    return Promise.reject(error);
+  }
+);
 
 
 export const sendOtp = (payload) => {

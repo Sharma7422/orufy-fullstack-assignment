@@ -18,6 +18,14 @@ export default function VerifyOtp() {
   const { verifyOtp } = useAuth()
   const authValue = localStorage.getItem("authValue")
 
+  // Redirect to login if authValue is missing
+  useEffect(() => {
+    if (!authValue) {
+      console.warn("authValue not found in localStorage, redirecting to login")
+      navigate("/login")
+    }
+  }, [authValue, navigate])
+
   // Auto-fill OTP if available from login
   useEffect(() => {
     const otpFromLogin = localStorage.getItem("demoOtp")
@@ -73,30 +81,51 @@ export default function VerifyOtp() {
       return;
     }
 
+    if (!authValue) {
+      setError("Session expired. Please login again.");
+      navigate("/login");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
     try {
+      console.log("Verifying OTP for:", authValue);
+      console.log("OTP Code:", otpCode);
+      
       // Use AuthContext's verifyOtp which automatically fetches user data
       await verifyOtp(authValue, otpCode);
+      console.log("OTP verified successfully");
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to verify OTP");
+      console.error("OTP Verification Error:", err);
+      console.error("Error Status:", err.response?.status);
+      console.error("Error Data:", err.response?.data);
+      setError(err.response?.data?.message || err.message || "Failed to verify OTP. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   const handleResendOtp = async () => {
+    if (!authValue) {
+      setError("Session expired. Please login again.");
+      navigate("/login");
+      return;
+    }
+
     setResendLoading(true);
     setError("");
 
     try {
+      console.log("Resending OTP for:", authValue);
       const payload = authValue.includes("@") 
         ? { email: authValue } 
         : { phone: authValue };
 
       const response = await resendOtp(payload);
+      console.log("OTP resent successfully");
       
       // Auto-fill new OTP if available
       if (response.data.otp) {
@@ -107,6 +136,7 @@ export default function VerifyOtp() {
       
       setResendTimer(20);
     } catch (err) {
+      console.error("Resend OTP Error:", err);
       setError(err.response?.data?.message || "Failed to resend OTP");
     } finally {
       setResendLoading(false);
@@ -174,7 +204,8 @@ export default function VerifyOtp() {
           </div>
 
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Verify OTP</h1>
-          <p className="text-gray-600 text-sm mb-8">Enter the 6-digit code sent to {authValue}</p>
+          <p className="text-gray-600 text-sm mb-8">Enter the 6-digit code sent to {authValue || "your email/phone"}</p>
+          {!authValue && <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg mb-4"><p className="text-yellow-600 text-sm">⚠️ Session expired. Please login again.</p></div>}
 
          
 
