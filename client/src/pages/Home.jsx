@@ -6,6 +6,7 @@ import ProductCard from "../components/ProductCard";
 import EditProductModal from "../components/EditProductModal";
 import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
 import Toast from "../components/Toast";
+import runner from "../assets/runner.jpg";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -127,7 +128,7 @@ export default function Home() {
             className="flex items-center gap-2 p-2 hover:bg-gray-200 hover:bg-opacity-30 rounded-lg transition-colors"
           >
             <img 
-              src="../assets/runner.jpg" 
+              src={runner} 
               alt="Profile" 
               className="w-8 h-8 rounded-full object-cover border border-gray-200"
               onError={(e) => {
