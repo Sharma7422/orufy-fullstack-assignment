@@ -1,132 +1,121 @@
-# Orufy Assignment – Full Stack Developer
+# Orufy – Full Stack Developer Intern Assignment
 
-A full-stack e-commerce product management application built with modern web technologies.
+This project is developed as part of the Full Stack Developer Intern assignment for  
+**Orufy Technologies Pvt. Ltd.**
+
+---
 
 ## Tech Stack
 
-- **Frontend**: React + Tailwind CSS + Vite
-- **Backend**: Node.js + Express
-- **Database**: MongoDB
+**Frontend**
+
+- React.js
+- Tailwind CSS
+- Vite
+
+**Backend**
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+
+---
 
 ## Project Structure
 
-```
-Orufy/
-├── client/                 # React frontend
-│   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   ├── pages/         # Page components
-│   │   ├── context/       # React context (Auth)
-│   │   ├── api/           # API calls (axios)
-│   │   └── assets/        # Images and static files
-│   └── package.json
-├── server/                # Node.js backend
-│   ├── src/
-│   │   ├── models/        # MongoDB schemas
-│   │   ├── controllers/   # Business logic
-│   │   ├── routes/        # API routes
-│   │   ├── middlewares/   # Custom middlewares
-│   │   └── config/        # Database config
-│   └── package.json
+orufy-fullstack-assignment/
+├── client/
+├── server/
 └── README.md
-```
+
+---
 
 ## Features
 
-- **Authentication**: OTP-based login and signup
-- **Product Management**: Create, read, update, delete products
-- **Product Catalog**: Browse and search products
-- **Publish/Unpublish**: Toggle product visibility
-- **Image Upload**: Support for multiple product images
-- **Responsive Design**: Mobile, tablet, and desktop views
+- OTP-based Login & Signup
+- Email or Phone Authentication
+- JWT Authentication
+- Product CRUD Operations
+- Image Upload (Multer)
+- Responsive UI (Tailwind CSS)
 
-## Frontend Setup
+---
 
-```bash
-cd client
-npm install
-npm run dev
-```
+## Authentication Flow
 
-The frontend will run on `http://localhost:5173`
+1. User enters email or phone number
+2. OTP is sent
+3. OTP is verified
+4. User is logged in
+
+---
 
 ## Backend Setup
 
-```bash
+````bash
 cd server
 npm install
 npm run dev
-```
 
-The backend will run on `http://localhost:3456`
 
-## Environment Variables
 
-Create a `.env` file in the server directory with the following variables:
-
-```
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
 PORT=3456
-```
+MONGO_URI=mongodb+srv://rahul7422:nLpXBrLPlaRd42rD@cluster0.eawr1e5.mongodb.net/orufy_assignment?retryWrites=true&w=majority&appName=Cluster0
+JWT_SECRET=orufy_secret_key
 
-Create a `.env` file in the client directory (or use `.env.local`):
 
-```
-VITE_API_URL=http://localhost:3456
-```
 
-## API Endpoints
+cd client
+npm install
+npm run dev
 
-### Authentication
 
-- `POST /auth/send-otp` - Send OTP to email/phone
-- `POST /auth/verify-otp` - Verify OTP and login
 
-### Products
+VITE_API_URL=http://localhost:3456/api
 
-- `GET /products` - Get all products
-- `POST /products/create` - Create new product
-- `PUT /products/:id` - Update product
-- `DELETE /products/:id` - Delete product
-- `PATCH /products/:id/status` - Toggle publish status
 
-## Key Components
 
-### Frontend
+API Endpoints
+Auth
 
-- **Login.jsx** - OTP-based authentication (login & signup)
-- **Products.jsx** - Product listing and management
-- **ProductCard.jsx** - Individual product display
-- **AddProductModal.jsx** - Add product form
-- **EditProductModal.jsx** - Edit product form
-- **Header.jsx** - Top navigation with user profile
-- **Sidebar.jsx** - Side navigation menu
-- **AuthContext.jsx** - User authentication state management
+POST /api/auth/send-otp
 
-### Backend
+POST /api/auth/verify-otp
 
-- **auth.controller.js** - Authentication logic
-- **product.controller.js** - Product CRUD operations
-- **auth.middleware.js** - JWT verification
-- **multer.js** - Image upload handling
+POST /api/auth/resend-otp
 
-## Live URLs
+Products
 
-- **Frontend**: https://...
-- **Backend**: https://...
+POST /api/products/create
 
-## Getting Started
+GET /api/products
 
-1. Clone the repository
-2. Install dependencies for both frontend and backend
-3. Set up environment variables
-4. Run both servers
-5. Open `http://localhost:5173` in your browser
+PUT /api/products/:id
 
-## Notes
+DELETE /api/products/:id
 
-- Images are uploaded to the `server/uploads/` directory
-- OTP verification is used for authentication (no password required)
-- Users can provide either email or phone for signup/login
-- Products support multiple images with carousel navigation
+
+
+Live Links
+
+Frontend: https://orufy-fullstack-assignment-rcxvvarts.vercel.app/login
+
+Backend: https://orufy-fullstack-assignment.onrender.com
+
+GitHub Repo: https://github.com/Sharma7422/orufy-fullstack-assignment
+
+
+
+---
+
+## STEP 5️⃣ Push to GitHub
+Run this in **project root**:
+
+```bash
+git add README.md
+git commit -m "Add project README"
+git push
+
+````
